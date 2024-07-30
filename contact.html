@@ -27,7 +27,11 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    // Replace 'your-public-api-key' with your actual EmailJS public API key
+    emailjs.init('your-public-api-key');
+</script>
  
 </head>
 
@@ -114,36 +118,61 @@
           </div><!-- End Google Maps -->
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="400">
-              <div class="row gy-4">
+            <form onsubmit="submitForm(event)" data-aos="fade-up" data-aos-delay="400" action="https://formspree.io/f/xdkngojk" method="post">
+                <div class="row gy-4">
+                    <div class="col-md-6">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="col-md-12">
+                        <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="col-md-12 text-center"></div>
+                    <style>
+                      .custom-button {
+                        color: var(--contrast-color);
+                        background: var(--accent-color);
+                        border: 0;
+                        padding: 10px 30px;
+                        transition: 0.4s;
+                        border-radius: 50px;
+                      }
+                    
+                      /* Optional: Adjust the padding and border-radius for smaller screens */
+                      @media (max-width: 576px) {
+                        .custom-button {
+                          padding: 8px 20px;
+                          border-radius: 25px;
+                        }
+                      }
+                    </style>
+                    
+                    <!-- Button -->
+                    <button type="submit" class="btn custom-button">Send Message</button>
 
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    </div>
                 </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
             </form>
-          </div><!-- End Contact Form -->
+            <script>
+              // Replace 'your-service-id' and 'your-template-id' with your actual EmailJS service and template IDs
+              document.getElementById('contact-form').addEventListener('submit', function(event) {
+                  event.preventDefault();
+      
+                  emailjs.sendForm('service_x4jousp', 'template_i0idjxd', this)
+                      .then(function(response) {
+                          alert('Email sent successfully!');
+                      }, function(error) {
+                          alert('Error sending email: ' + JSON.stringify(error));
+                      });
+              });
+          </script>
+        </div>
+       <!-- End Contact Form -->
 
         </div>
 
