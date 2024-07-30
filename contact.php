@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Preparing the email
-    $to = "your-email@example.com"; // Replace with your email
+    $to = " adnanmuhammad4393@gmail.com"; // Replace with your email
     $headers = "From: $name <$email>\r\n";
     $email_subject = "Contact Form: $subject";
     $email_body = "You have received a new message from the contact form.\n\n".
