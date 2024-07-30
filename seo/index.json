@@ -1,0 +1,74 @@
+{
+  "company": "ACEC Engineering Consultancy",
+  "seo": {
+    "onPage": {
+      "titleTags": "Engineering Consultancy Services | ACEC",
+      "metaDescriptions": "Providing top-notch engineering consultancy services. Learn more about our projects and expertise.",
+      "headerTags": ["H1: Welcome to ACEC Engineering Consultancy", "H2: Our Services", "H3: Recent Projects"],
+      "altText": ["image1: Engineering Team", "image2: Completed Project"],
+      "internalLinking": ["services.html", "projects.html", "contact.html"]
+    },
+    "technicalSeo": {
+      "siteSpeed": "Optimized images, enabled caching",
+      "mobileFriendliness": "Responsive design",
+      "xmlSitemap": "/sitemap.xml",
+      "robotsTxt": "/robots.txt"
+    }
+  },
+  "contentMarketing": {
+    "blogging": {
+      "topics": ["Engineering Best Practices", "Project Management Tips", "Successful Project Case Studies"],
+      "keywords": ["engineering consultancy", "project management", "construction engineering"],
+      "updateFrequency": "Weekly"
+    },
+    "guestBlogging": {
+      "collaboration": "Industry blogs",
+      "backlinks": "Reputable engineering and construction sites"
+    },
+    "caseStudies": {
+      "content": ["Detailed project descriptions", "Client testimonials", "Project outcomes"],
+      "downloads": "White papers available for email sign-ups"
+    }
+  },
+  "socialMediaMarketing": {
+    "linkedin": {
+      "companyPage": "Detailed description, regular updates, engaging content",
+      "engagement": "Participation in LinkedIn groups"
+    },
+    "twitterFacebook": {
+      "content": ["Sharing blog posts", "Case studies", "Industry news"],
+      "engagement": "Responding to comments and messages promptly"
+    },
+    "youtube": {
+      "videos": ["Educational videos", "Project showcases", "Industry insights"]
+    }
+  },
+  "localSeo": {
+    "googleMyBusiness": {
+      "profile": "Optimized with accurate information, photos, regular updates",
+      "reviews": "Encourage positive reviews from clients"
+    },
+    "localListings": {
+      "citations": "Accurate business listings on local directories and citation sites"
+    }
+  },
+  "emailMarketing": {
+    "newsletters": {
+      "frequency": "Regular updates",
+      "content": ["Company news", "Blog highlights", "Industry insights"],
+      "segmentation": "Targeted content for different audience groups"
+    },
+    "leadNurturing": {
+      "dripCampaigns": "Email drip campaigns to nurture leads"
+    }
+  },
+  "analyticsMonitoring": {
+    "googleAnalytics": {
+      "tracking": "Website performance, traffic sources, bounce rates, conversions",
+      "adjustments": "Using insights to adjust strategies"
+    },
+    "seoTools": {
+      "audits": "Regular SEO audits using tools like SEMrush or Ahrefs"
+    }
+  }
+}
