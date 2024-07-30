@@ -40,6 +40,27 @@
     // Replace 'your-public-api-key' with your actual EmailJS public API key
     emailjs.init('service_x4jousp');
 </script>
+  <script src="seo/index.json" type="application/json">
+    <script>
+    // Fetch and display the contents of robots.txt
+    fetch('path/to/robots.txt')
+      .then(response => response.text())
+      .then(text => {
+        console.log("Robots.txt:", text);
+        // You can display or process the data here
+      })
+      .catch(error => console.error('Error loading robots.txt:', error));
+
+    // Fetch and display the contents of sitemap.xml
+    fetch('path/to/sitemap.xml')
+      .then(response => response.text())
+      .then(text => {
+        console.log("Sitemap.xml:", text);
+        // You can parse XML if needed
+      })
+      .catch(error => console.error('Error loading sitemap.xml:', error));
+  </script>
+    <script src="seo/perfomence.js"></script>
 </head>
 
 <body class="index-page">
