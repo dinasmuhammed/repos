@@ -27,7 +27,35 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+   <script>
+        async function submitForm(event) {
+            event.preventDefault();
 
+            const form = event.target;
+            const data = {
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                message: form.message.value
+            };
+
+            try {
+                const response = await fetch('YOUR_WEB_APP_URL', {
+                    method: 'POST',
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                if (result.result === 'success') {
+                    alert('Message sent successfully.');
+                } else {
+                    alert('Failed to send message.');
+                }
+            } catch (error) {
+                alert('An error occurred: ' + error.message);
+            }
+        }
+    </script>
  
 </head>
 
@@ -124,9 +152,8 @@
              
             </div>
           </div>
-
-         <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
-        <form action="contact.php" method="post" class="php-email-form">
+ <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
+        <form class="php-email-form" onsubmit="submitForm(event)">
             <h3>Get a quote</h3>
             <p>For any questions or to connect, reach out via our contact form.</p>
             <div class="row gy-3">
@@ -148,17 +175,7 @@
             </div>
         </form>
     </div>
-                <div class="col-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
-
-                  <button type="submit">Get a quote</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Quote Form -->
+     <!-- End Quote Form -->
 
         </div>
 
