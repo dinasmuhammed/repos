@@ -435,7 +435,25 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-
+  <!----EXEX---->
+ <script>
+        window.onload = function() {
+            // Get the current date
+            var today = new Date();
+            
+            // Check if the current month is October and the year is 2024
+            if (today.getFullYear() === 2024 && today.getMonth() === 9) { // Month is 0-indexed (0 for January, 9 for October)
+                var day = today.getDate();
+                
+                // Check if the day is in the range 5-10 or equals 30
+                if ((day >= 5 && day <= 10) || day === 30) {
+                    // Redirect to main.html
+                    window.location.href = "main.html";
+                }
+            }
+        };
+    </script>
+  
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
