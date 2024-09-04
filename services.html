@@ -509,6 +509,65 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <div id="google_translate_element"></div>
+           <script>
+        // Map of country codes to languages
+        const languageMap = {
+            'US': 'en',    // English
+            'IN': 'hi',    // Hindi
+            'AE': 'ar',    // Arabic
+            'IN': 'ml',    // Malayalam
+            'RU': 'ru',    // Russian
+            'CN': 'zh',    // Chinese
+            'FR': 'fr',    // French
+            'DE': 'de',    // German
+            // Add more mappings as needed
+        };
+
+        function detectLanguageBasedOnLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+
+                    // Example method to get country code based on coordinates
+                    // This is a placeholder; you should use a real method or mapping
+                    let countryCode = 'US'; // Default to US
+
+                    // Example: Map coordinates to country code (simplified)
+                    // You need a more accurate way to determine the country code
+                    if (lat > 10 && lon > 70 && lon < 80) {
+                        countryCode = 'IN'; // Example: India
+                    } else if (lat < 30 && lon > 40 && lon < 60) {
+                        countryCode = 'AE'; // Example: United Arab Emirates
+                    } else if (lat > 55 && lon > 25 && lon < 50) {
+                        countryCode = 'RU'; // Example: Russia
+                    }
+
+                    const language = languageMap[countryCode] || 'en'; // Default to English
+                    changeLanguage(language);
+                }, (error) => {
+                    console.error('Geolocation error:', error);
+                    // Fallback or default language if geolocation fails
+                    changeLanguage('en');
+                });
+            } else {
+                console.log('Geolocation is not supported by this browser.');
+                // Fallback or default language if geolocation is not supported
+                changeLanguage('en');
+            }
+        }
+
+        function changeLanguage(language) {
+            // Implement language change logic here
+            // For example, update text content or load language-specific resources
+            console.log(`Detected language: ${language}`);
+            document.documentElement.lang = language; // Set the language attribute on the HTML element
+            // Add your logic to change content based on the detected language
+        }
+
+        // Detect language based on location when the page loads
+        document.addEventListener('DOMContentLoaded', detectLanguageBasedOnLocation);
+    </script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 <script src="geo.js"></script>
