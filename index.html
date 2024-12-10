@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        /* No CSS */
+    </style>
+</head>
+<body>
+    <!-- No content -->
+    <script>
+        // Disable right-click
+        document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+        // Disable specific key combinations
+        document.addEventListener("keydown", (event) => {
+            if (
+                event.key === "F12" || // Disable F12
+                (event.ctrlKey && event.shiftKey && event.key === "I") || // Disable Ctrl+Shift+I
+                (event.ctrlKey && event.shiftKey && event.key === "C") || // Disable Ctrl+Shift+C
+                (event.ctrlKey && event.shiftKey && event.key === "J") || // Disable Ctrl+Shift+J
+                (event.ctrlKey && event.key === "U") // Disable Ctrl+U
+            ) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
